@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>my anime</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+        <script src="./components/rotation.js"></script>
+        <script src="./components/creature.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <a-assets>
+                <a-asset-item id="terrain" src="./assets/island/scene.gltf"></a-asset-item>
+                <a-asset-item id="tiger" src="./assets/tiger_animation/scene.gltf"></a-asset-item>
+            </a-assets>
+
+            <a-entity id="look" look-controls camera position="0 2 10"></a-entity>
+
+            <a-entity id="terrain-am" gltf-model="#terrain" scale="0.01 0.01 0.01" position="0 0 0" animation="property:rotation; to:0 1000 0; easing:linear; loop:true; dur:150000" terrain-rotation trex></a-entity>
+            <a-entity id="tiger-am" gltf-model="#tiger" scale="0.4 0.4 0.4" position="0 2 5" tiger-rotation></a-entity>
+        </a-scene>
+    </body>
+</html>
